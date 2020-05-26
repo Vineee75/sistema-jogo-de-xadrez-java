@@ -44,7 +44,7 @@ public class UI {
 			Integer linha = Integer.parseInt(s.substring(1));
 			return new PosicaoXadrez(coluna, linha);
 		} catch (RuntimeException e) {
-			throw new InputMismatchException("Erro na leitura da posição do xadrez. Valores válidos são de a1 até h8");
+			throw new InputMismatchException("Erro na leitura da posicao do xadrez. Valores validos sao de a1 ate h8");
 		}
 	}
 	
@@ -55,6 +55,9 @@ public class UI {
 		System.out.println();
 		System.out.println("Turno: " + partidaDeXadrez.getTurno());
 		System.out.println("Aguardadno jogador: " + partidaDeXadrez.getJogadorAtual());
+		if(partidaDeXadrez.getXeque()) {
+			System.out.println("XEQUE!");
+		}
 	}
 
 	public static void imprimirTabuleiro(PecaXadrez[][] pecas) {
@@ -87,7 +90,7 @@ public class UI {
 		}
 		if (peca == null) {
 			System.out.print("-" + ANSI_RESET);
-		} else if (peca.getCor() == Cores.WHITE) {
+		} else if (peca.getCor() == Cores.BRANCO) {
 			System.out.print(ANSI_WHITE + peca + ANSI_RESET);
 		} else {
 			System.out.print(ANSI_YELLOW + peca + ANSI_RESET);
@@ -97,8 +100,8 @@ public class UI {
 	}
 	
 	private static void imprimirPecasCapturadas(List<PecaXadrez> capturadas) {
-		List<PecaXadrez> branco = capturadas.stream().filter(x -> x.getCor() == Cores.WHITE).collect(Collectors.toList());
-		List<PecaXadrez> preto = capturadas.stream().filter(x -> x.getCor() == Cores.BLACK).collect(Collectors.toList());
+		List<PecaXadrez> branco = capturadas.stream().filter(x -> x.getCor() == Cores.BRANCO).collect(Collectors.toList());
+		List<PecaXadrez> preto = capturadas.stream().filter(x -> x.getCor() == Cores.PRETO).collect(Collectors.toList());
 		System.out.println("Peças capturadas: ");
 		System.out.print("Brancas: ");
 		System.out.print(ANSI_WHITE);
