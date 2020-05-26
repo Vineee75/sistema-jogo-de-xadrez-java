@@ -46,19 +46,34 @@ public class UI {
 
 	public static void imprimirTabuleiro(PecaXadrez[][] pecas) {
 		for (int i = 0; i < pecas.length; i++) {
-			System.out.print((8 - i) + " ");
+			System.out.print((ANSI_RED + (8 - i) + ANSI_RESET) + " ");
 			for (int j = 0; j < pecas.length; j++) {
-				imprimirPeca(pecas[i][j]);
+				imprimirPeca(pecas[i][j], false);
 			}
 			System.out.println();
 
 		}
-		System.out.println("  a b c d e f g h");
+		System.out.println( ANSI_PURPLE + "  a b c d e f g h" + ANSI_RESET);
+	}
+	
+	public static void imprimirTabuleiro(PecaXadrez[][] pecas, boolean[][] movimentosPossiveis) {
+		for (int i = 0; i < pecas.length; i++) {
+			System.out.print((ANSI_RED + (8 - i) + ANSI_RESET)+ " ");
+			for (int j = 0; j < pecas.length; j++) {
+				imprimirPeca(pecas[i][j], movimentosPossiveis[i][j]);
+			}
+			System.out.println();
+
+		}
+		System.out.println( ANSI_PURPLE + "  a b c d e f g h" + ANSI_RESET);
 	}
 
-	private static void imprimirPeca(PecaXadrez peca) {
+	private static void imprimirPeca(PecaXadrez peca, boolean fundo) {
+		if(fundo) {
+			System.out.print(ANSI_BLUE_BACKGROUND);
+		}
 		if (peca == null) {
-			System.out.print("-");
+			System.out.print("-" + ANSI_RESET);
 		} else if (peca.getCor() == Cores.WHITE) {
 			System.out.print(ANSI_WHITE + peca + ANSI_RESET);
 		} else {
