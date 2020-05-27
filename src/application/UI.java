@@ -59,8 +59,7 @@ public class UI {
 			if (partidaDeXadrez.getXeque()) {
 				System.out.println("XEQUE!");
 			}
-		}
-		else {
+		} else {
 			System.out.println("XEQUE MATE!");
 			System.out.println("Vencedor: " + partidaDeXadrez.getJogadorAtual());
 		}

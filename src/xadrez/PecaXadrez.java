@@ -17,25 +17,25 @@ public abstract class PecaXadrez extends Peca {
 	public Cores getCor() {
 		return cor;
 	}
-	
+
 	public void aumentarContarMovimento() {
 		contarMovimento++;
 	}
-	
+
 	public void diminuirContarMovimento() {
 		contarMovimento--;
 	}
-	
+
 	public Integer getContarMovimento() {
 		return contarMovimento;
 	}
-	
+
 	public PosicaoXadrez getPosicaoXadrez() {
 		return PosicaoXadrez.fromPosicaoXadrez(posicao);
 	}
-	
+
 	protected boolean temUmaPecaOponente(Posicao posicao) {
-		PecaXadrez p = (PecaXadrez)getTabuleiro().peca(posicao);
+		PecaXadrez p = (PecaXadrez) getTabuleiro().peca(posicao);
 		return p != null && p.getCor() != cor;
 	}
 

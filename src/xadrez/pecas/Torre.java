@@ -4,7 +4,6 @@ import tabuleiro.Posicao;
 import tabuleiro.Tabuleiro;
 import xadrez.Cores;
 import xadrez.PecaXadrez;
-import xadrez.PosicaoXadrez;
 
 public class Torre extends PecaXadrez {
 

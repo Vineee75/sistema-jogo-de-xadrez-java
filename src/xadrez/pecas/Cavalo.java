@@ -28,47 +28,41 @@ public class Cavalo extends PecaXadrez {
 
 		Posicao p = new Posicao(0, 0);
 
-		
 		p.setValores(posicao.getLinha() - 1, posicao.getColuna() - 2);
 		if (getTabuleiro().posicaoExistente(p) && podeMover(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
 
-		
 		p.setValores(posicao.getLinha() - 2, posicao.getColuna() - 1);
 		if (getTabuleiro().posicaoExistente(p) && podeMover(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
 
-		
 		p.setValores(posicao.getLinha() - 2, posicao.getColuna() + 1);
 		if (getTabuleiro().posicaoExistente(p) && podeMover(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
 
-		
-		p.setValores(posicao.getLinha()- 1, posicao.getColuna() + 2);
+		p.setValores(posicao.getLinha() - 1, posicao.getColuna() + 2);
 		if (getTabuleiro().posicaoExistente(p) && podeMover(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
 
-		
 		p.setValores(posicao.getLinha() + 1, posicao.getColuna() + 2);
 		if (getTabuleiro().posicaoExistente(p) && podeMover(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
 
-		
 		p.setValores(posicao.getLinha() + 2, posicao.getColuna() + 1);
 		if (getTabuleiro().posicaoExistente(p) && podeMover(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
-		
+
 		p.setValores(posicao.getLinha() + 2, posicao.getColuna() - 1);
 		if (getTabuleiro().posicaoExistente(p) && podeMover(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
-		
+
 		p.setValores(posicao.getLinha() + 1, posicao.getColuna() - 2);
 		if (getTabuleiro().posicaoExistente(p) && podeMover(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
