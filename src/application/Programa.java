@@ -40,6 +40,12 @@ public class Programa {
 					capturadas.add(pecaCapturada);
 				}
 			
+				if(partidaDeXadrez.getPromovida() != null) {
+					System.out.print("Entre com a peca da pormocao (B/C/T/Q): ");
+					String tipo = sc.nextLine();
+					partidaDeXadrez.substituirPecaPromovida(tipo);
+				}
+				
 			}
 			catch (XadrezException e) {
 				System.out.println(e.getMessage());
